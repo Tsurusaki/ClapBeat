@@ -8,20 +8,28 @@
 
 #import "Clap.h"
 
-@implementation Clap
+@implementation Clap{
+		CFURLRef soundURL;
+		SystemSoundID soundID;
+	}
+
+
+
+
 
 -(void)setSound{
+	
 	CFBundleRef mainBundle = CFBundleGetMainBundle();
-	soundURL=CFBundleCopyResourceURL(mainBundle,CFSTR("Clap"),CFSTR("wav"),nil);
+	soundURL=CFBundleCopyResourceURL(mainBundle,CFSTR("clap"),CFSTR("wav"),nil);
 	AudioServicesCreateSystemSoundID(soundURL,&soundID);
 }
 
 -(void)play{
-	AudioServicesPlaySystemSoundID(soundID);
+	AudioServicesPlaySystemSound(soundID);
 }
 
 
--(void)repeatClap:(int)count{
+-(void)repeatClap:(int)count {
 	int i = 0;
 	while (i < count) {
 		[self play];
@@ -31,17 +39,15 @@
 	}
 }
 
-+(id)initClap{
++(id)initClap {
 	return [[self alloc]init];
 	
 }
 
--(id)init{
-	self=[super init];
+-(id)init {
+	self = [super init];
 	[self setSound];
 	return self;
-	
 }
-
 
 @end

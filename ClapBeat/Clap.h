@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "Clap.h"
 
-@interface Clap : NSObject;
+@interface Clap : NSObject
 
 +(id)initClap;
 -(id)init;
@@ -24,9 +24,14 @@
 @end
 
 
-@implementation Clap{
-	CFURLRef soundURL;
-	SystemSoundID soundID;
-	
-}
+
+
+
+
+
+
+
+
+
+
 

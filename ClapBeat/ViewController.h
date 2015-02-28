@@ -7,17 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Clap.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
 <UIPickerViewDataSource, UIPickerViewDelegate>
-{
-	Clap *clapInstance;
-	IBOutlet UIPickerView *clapPickerView;
+	Clap *ClapInstance;
+	IBOutlet UIPickerView *ClapPickerView;
 	NSString *repeatNumbersForPicker [10];
 	int repeatCount;
 	
 }
 -(IBAction)play:(id)sender;
+
 
 
 

@@ -12,40 +12,37 @@
 
 @end
 
-@implementation ViewController{
-
+@implementation ViewController
     // Do any additional setup after loading the view, typically from a nib.
 
 
--(void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+
     // Dispose of any resources that can be recreated.
-}
+
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	clapInstance = [clap initClap];
+	ClapInstance = [Clap initClap];
 	repeatCount = 1;
 	for (int i = 0; i < 10; i++){
 		NSString *numberText = [NSString stringWithFormat: @"%d回", i+1];
 		repeatNumbersForPicker[i] = numberText;
-		
 	}
-	
 }
 
 -(NSInteger)numberOfComponentsInPickerView:
 				(UIPickerView *)thePickerView{
 	return 1;
-	
-}
+	}
 
 -(NSInteger)pickerView:(UIPickerView *)thePickerView
 			numberOfRowsInComponent:(NSInteger)component{
 	return 10;
 }
+
+
 -(NSString *)pickerView:(UIPickerView *)thePickerView
-titleForRow:(NSInteger)row forComponent(NSInteger)component{
+titleForRow:(NSInteger)row forComponent:(NSInteger)component{
 	 return repeatNumbersForPicker[row];
 }
  
@@ -57,7 +54,7 @@ titleForRow:(NSInteger)row forComponent(NSInteger)component{
 	
 -(IBAction)play:(id)sender{
 		
-	[clapInstance repeatClap:repeatCount];
+	[ClapInstance repeatClap:repeatCount];
 }
-}
+
 @end
